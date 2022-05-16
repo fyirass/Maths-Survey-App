@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h3 style = "margin-bottom: 20px"><strong>Pick Your Choice</strong></h3>
+{% for x in qs %}
+<h4>{{x.question}}</h4>
+
+
+<form method="" action="">
+<ul class="list-group" style="margin:0px">
+    
+    
+    <label>
+        <li class="list-group-item">
+            <input class="form-check-input me-1" type="radio" name = "Never or Hardly Ever" value=1 aria-label="..."> Never or Hardly Ever<br>
+            <input class="form-check-input me-1" type="radio" name = "About once a Year" value=2 aria-label="..."> About once a Year<br>
+            <input class="form-check-input me-1" type="radio" name = "About once a Month" value=3 aria-label="..."> About once a Month<br>
+            <input class="form-check-input me-1" type="radio" name = "About once a week" value=4 aria-label="..."> About once a week<br>
+            <input class="form-check-input me-1" type="radio" name = "About Everyday" value=5 aria-label="..."> About Everyday<br>
+            <input class="form-check-input me-1" type="radio" name = "Don't Understand the Question" value=0 aria-label="..."> Don't Understand the Question<br>
+
+          </li>
+    </label>
+    
+
+    
+</ul>
+<input type="submit" value = "Submit" class = 'btn btn-primary'>
+</form>
+
+{% endfor %}
+
+{% endblock %}
