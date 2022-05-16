@@ -7,7 +7,6 @@
 <h4>{{x.question}}</h4>
 
 
-<form method="" action="">
 <ul class="list-group" style="margin:0px">
     
     
@@ -26,9 +25,10 @@
 
     
 </ul>
-<input type="submit" value = "Submit" class = 'btn btn-primary'>
-</form>
+
 
 {% endfor %}
+<button type="submit" class="btn btn-primary" onclick="location.href = 'survey?id={{id}}'">Start Survey</button>
+
 
 {% endblock %}
