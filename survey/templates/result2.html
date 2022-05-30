@@ -16,9 +16,8 @@
       }
       #c {
         position: absolute;
-        right: -1px;
-
-} 
+        right: 5%;
+      } 
     </style>
      
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
@@ -34,7 +33,7 @@
 
 
       <div>
-        <canvas id="myChart" width="50" height="50"></canvas>
+        <canvas id="myChart" width="600" height="500"></canvas>
       </div>
       </div>
      </div>
@@ -81,7 +80,22 @@
   type: 'bar',
   data,
   options: {
+    maintainAspectRatio: false,
+    devicePixelRatio: 1,
     indexAxis: 'y',
+    scales: {
+      y: {
+        beginAtZero: true
+      },
+      x: {
+        beginAtZero: true,
+        max:5,
+        ticks: {
+          
+          stepSize: 1}
+        
+      }
+    }
   }
 };
 

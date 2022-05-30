@@ -23,7 +23,9 @@ def survey(request):
         Question.objects.filter(id = Id-1).update(votes = 0)
     else :
         Question.objects.filter(id = Id-1).update(votes = vote)
-   
+    
+    if Id == 33 :
+        return redirect('result')
 
     
     return render(request, 'survey.html', {'qs': Question.objects.filter(pk=request.GET["id"]), 'id':(Id+1)})
@@ -51,7 +53,7 @@ def result(request):
     a_problem = Question.objects.filter(affective_zone = "Problem Solve").aggregate(Max('votes'))
     am_problem = a_problem.get('votes__max')
 
-    print(dm_data)
+    
     return render(request, 'result.html', {'dm_data': dm_data,'dm_space': dm_space, 'dm_pattern' : dm_pattern, 'dm_quantity' : dm_quantity, 'am_manage': am_manage , 'am_problem': am_problem })
 
 
