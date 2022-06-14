@@ -1,48 +1,56 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+<head>
+<body>
 <br>
 
 {% for x in qs %}
 <h4>{{x.question}}</h4>
 <br>
 
-<form method="POST" action='/survey?id={{id}}'">
-   
-    {% csrf_token %}
-   
-    <ul class="list-group" style="margin:0px">
+    <form method="POST" action='/survey?id={{id}}'">
     
+        {% csrf_token %}
     
-        <label>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="radio" name = "radio" value=1 aria-label="..."> Never or Hardly Ever</input><br><br>
-                <input class="form-check-input me-1" type="radio" name = "radio" value=2 aria-label="..."> About once a Year</input><br><br>
-                <input class="form-check-input me-1" type="radio" name = "radio" value=3 aria-label="..."> About once a Month</input><br><br>
-                <input class="form-check-input me-1" type="radio" name = "radio" value=4 aria-label="..."> About once a week</input><br><br>
-                <input class="form-check-input me-1" type="radio" name = "radio" value=5 aria-label="..."> About Everyday</input><br><br>
-                <input class="form-check-input me-1" type="radio" name = "radio" value=0 aria-label="..."> Don't Understand the Question</input><br><br>
+        <ul class="list-group" style="margin:0px">
+        
+        
+            <label>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name = "radio" value=1 aria-label="..."> Never or Hardly Ever</input><br><br>
+                    <input class="form-check-input me-1" type="radio" name = "radio" value=2 aria-label="..."> About once a Year</input><br><br>
+                    <input class="form-check-input me-1" type="radio" name = "radio" value=3 aria-label="..."> About once a Month</input><br><br>
+                    <input class="form-check-input me-1" type="radio" name = "radio" value=4 aria-label="..."> About once a week</input><br><br>
+                    <input class="form-check-input me-1" type="radio" name = "radio" value=5 aria-label="..."> About Everyday</input><br><br>
+                    <input class="form-check-input me-1" type="radio" name = "radio" value=0 aria-label="..."> Don't Understand the Question</input><br><br>
 
-            </li>
-        </label>
-    
+                </li>
+            </label>
+        
 
-         
-    </ul>
-    <br>
-    <br>
+            
+        </ul>
+        <br>
+        <br>
 
-    {% if id == 34 %}
-    <submit type="submit" class="btn btn-primary" onclick="location.href='result'"  name="radio">Submit</submit>
+        {% if id == 34 %}
+        <submit type="submit" class="btn btn-primary" onclick="location.href='result'"  name="radio">Submit</submit>
 
-    {% else %}
-    <input type="submit" class="btn btn-primary" style="position: fixed; bottom: 3%;" >
-    
-    {% endif %}
-    {% endfor %}
+        {% else %}
+        <input type="submit" class="btn btn-primary" style="position: fixed; bottom: 3%;" >
+        
+        {% endif %}
+        {% endfor %}
 
-</form>
-
+    </form>
+</body>
 
 {% endblock %}
