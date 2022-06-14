@@ -1,5 +1,6 @@
-{% extends 'base.html' %}
-{% block content %}
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,8 @@
       }
       #c {
         position: absolute;
-        right: 5%;
+        left: 40%;
+        right: 40%;
       } 
     </style>
      
@@ -30,26 +32,32 @@
  <body>
      <div class="container">
        <div class="row align-items-center">
-
+        <h2>Affective Zone</h2>
+        <br/>
 
       <div>
-        <canvas id="myChart" width="600" height="500"></canvas>
+
+        <canvas id="myChart" width="600" height="400"></canvas>
       </div>
       </div>
      </div>
 <br>
 <br>
         
-        <button type="submit" class="btn btn-primary" onclick="location.href = 'result'">  < Back </button>
+        
 
         <button type="submit" class="btn btn-primary" id="c" onclick="location.href = '/'">Restart</button>
    
-             
-         
+          
+        <br>
+        <br>
            
          </div>
+         <br>
+         <br>
        </div>
-  
+       <br>
+       <br>
        
 
 
@@ -62,23 +70,28 @@
     'Problem Solve',
   ];
 
-  const data = {
+  const data1 = {
     labels: labels,
     datasets: [{
         barThickness: 300,
       maxBarThickness: 100,
       minBarLength: 5,
       axis: 'y',
-      label: 'Affective Zone',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      label: 'Manage a Mathematics Containing Situation',
+      
+      backgroundColor: [
+      'rgb(0, 51, 204,0.8)',
+      'rgb(102, 153, 0,0.8)'
+      
+    ],
+      borderColor: 'rgb(102, 153, 0,0.8)',
       data: [{{am_manage}}, {{am_problem}}],
     }]
   };
 
-  const config = {
+  const config1 = {
   type: 'bar',
-  data,
+  data:data1,
   options: {
     maintainAspectRatio: false,
     devicePixelRatio: 1,
@@ -101,7 +114,8 @@
 
   const MyChart = new Chart(
     document.getElementById('myChart'),
-    config
+    config1,
+   
   );
 </script>
 
@@ -111,4 +125,3 @@
  </body>
  </html>
 
-{% endblock %}

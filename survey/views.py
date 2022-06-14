@@ -16,9 +16,9 @@ def index(request ):
 def survey(request):
     
     Id = int(request.GET["id"])
-    print("id = ", Id)
+    
     vote = request.POST.get('radio')
-    print("vote = ", vote)
+    
     if vote==None : 
         Question.objects.filter(id = Id-1).update(votes = 0)
     else :

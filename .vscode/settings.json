@@ -1,4 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/3ff6b641-9496-4637-8550-83a7389ae08a/microsoft.web/sites/subscriptions/3ff6b641-9496-4637-8550-83a7389ae08a/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/mathsurveyapp",
+    "appService.defaultWebAppToDeploy": "/subscriptions/3ff6b641-9496-4637-8550-83a7389ae08a/microsoft.web/sites/subscriptions/3ff6b641-9496-4637-8550-83a7389ae08a/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/mathsurveyapp",
     "appService.deploySubpath": "."
 }
