@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maths survey App</title>
+    <title>Maths survey</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel = stylesheet href = "{% static 'css/style.css' %}">
@@ -61,7 +61,25 @@
           transition: .25s ease;
           box-shadow:  inset 0 0 0 2px #00005c;
       }
-      
+      @media only screen and (max-width: 600px) {
+        #sbtn{
+        position: fixed;
+         bottom: 3%;
+
+      }}
+
+      @media only screen and (max-width: 600px) {
+        #fixed { 
+        position: fixed;
+        bottom: 22%;
+        
+        width: 94%;
+        
+      }}
+
+     
+
+
       input[type="radio"]:checked + span:before{
           box-shadow: inset 0 0 0 10px #00005c;
       }
@@ -86,9 +104,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'index' %}"><h2>Maths survey App</h2></a>
+          <a class="navbar-brand" href="{% url 'index' %}"><h2>Maths Survey</h2></a>
           
-          <a href="{% url 'index' %}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flat_restart_icon.svg/1024px-Flat_restart_icon.svg.png" alt="Description for image" width="50" height="50"></a>
+         
           
 
           
