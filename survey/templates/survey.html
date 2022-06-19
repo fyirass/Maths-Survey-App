@@ -6,34 +6,364 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <style>
+                *,
+        *:after,
+        *:before{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin:0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+            color: #000021;
+            font-size: 18px;
+            background-color: #E6E6EF;
+        }
+
+
+
+        input[type="radio"]{
+            display: none;
+        }
+
+        label{
+            display: block;
+            cursor: pointer;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        label span{
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 6px 3px 3px;
+            border-radius: 20px;
+            transition: .25s ease;
+        }
+
+        label span:hover,
+        input[type="radio"]:checked + span{
+            background-color: #d6d6e5;
+        }
+
+        label span:before{
+            content: "";
+            background-color: #ffff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: .25s ease;
+            box-shadow:  inset 0 0 0 2px #0000F7;
+        }
+
+        input[type="radio"]:checked + span:before{
+            box-shadow: inset 0 0 0 5.5px #0000F7;
+        }
+
+        @media only screen and (min-height: 1300px ) {
+            #fixed { 
+            font-size: 18px;
+            position: fixed;
+            bottom: 45%;
+            width: 90%;
+            
+          }}
+    
+          @media only screen and (min-height: 1300px) {
+            #sbtn{
+            position: fixed;
+             bottom: 40%;
+    
+          }}
+        @media only screen and (max-height: 1100px ) {
+            #fixed { 
+            font-size: 18px;
+            position: fixed;
+            bottom: 48%;
+            width: 90%;
+            
+          }}
+    
+          @media only screen and (max-height: 1100px) {
+            #sbtn{
+            position: fixed;
+             bottom: 43%;
+    
+          }}
+    
+    
+          @media only screen and (max-height: 1000px ) {
+            #fixed { 
+            font-size: 18px;
+            position: fixed;
+            bottom: 40%;
+            width: 90%;
+            
+          }}
+          @media only screen and (max-height: 1000px) {
+            #sbtn{
+            position: fixed;
+             bottom: 36%;
+    
+          }}
+          @media only screen and (max-height: 900px) {
+            #fixed { 
+              font-size: 16px;
+            position: fixed;
+            bottom: 38%;
+            width: 90%;
+            
+          }}
+          @media only screen and (max-height: 900px) {
+            #sbtn{
+            position: fixed;
+             bottom: 36%;
+    
+          }}
+    
+          @media only screen and (max-height: 800px) {
+            #fixed { 
+              font-size: 16px;
+            position: fixed;
+            bottom: 29%;
+            width: 90%;
+            
+          }}
+          @media only screen and (max-height: 800px) {
+            #sbtn{
+            position: fixed;
+             bottom: 25%;
+    
+          }}
+    
+    
+          @media only screen and (max-height: 700px) {
+            #fixed { 
+              font-size: 16px;
+            position: fixed;
+            bottom: 20%;
+            width: 94%;
+            
+          }}
+    
+          @media only screen and (max-height: 700px) {
+            #sbtn{
+            position: fixed;
+             bottom: 15%;
+    
+          }}
+    
+          @media only screen and (max-height: 600px) {
+            #fixed { 
+            font-size: 13px;
+            position: fixed;
+            bottom: 18%;
+            width: 94%;
+            
+          }}
+    
+          @media only screen and (max-height: 600px) {
+            #sbtn{
+            position: fixed;
+             bottom: 13%;
+    
+          }}
+          @media only screen and (max-height: 600px) {
+            #qs{
+
+                font-size: 15px;
+
+            }}
+    
+    
+          @media only screen and (max-height: 500px) {
+            #fixed { 
+              font-size: 12px;
+            position: fixed;
+            bottom: 5%;
+            width: 94%;
+            
+          }}
+
+          @media only screen and (max-height: 500px) {
+            #sbtn{
+            font-size: 13px;
+            position: fixed;
+             bottom: 2%;
+    
+          }}
+
+          @media only screen and (max-height: 500px) {
+            #qs{
+
+                font-size: 15px;
+
+            }}
+
+            @media only screen and (max-height: 400px) {
+                #fixed { 
+                  font-size: 9px;
+                position: fixed;
+                bottom: 4%;
+                width: 70%;
+                
+                
+              }}
+    
+              @media only screen and (max-height: 400px) {
+                #sbtn{
+                font-size: 11px;
+                position: fixed;
+                 bottom: 1%;
+        
+              }}
+    
+              @media only screen and (max-height: 400px) {
+                #qs{
+    
+                    font-size: 13px;
+    
+                }}
+
+              @media only screen and (max-height: 400px) {
+                    #lab{
+        
+                        margin-bottom: 2px;
+
+                    }}
+
+
+                    @media only screen and (max-height: 350px) {
+                        #fixed { 
+                          font-size: 8px;
+                        position: fixed;
+                        bottom: 9%;
+                        width: 80%;
+                        
+                        
+                      }}
+            
+                      @media only screen and (max-height: 350px) {
+                        #sbtn{
+                        font-size: 10px;
+                        position: fixed;
+                         bottom: 3%;
+                
+                      }}
+            
+                      @media only screen and (max-height: 350px) {
+                        #qs{
+            
+                            font-size: 11px;
+            
+                        }}
+        
+                      @media only screen and (max-height: 350px) {
+                            #lab{
+                
+                                margin-bottom: 1px;
+        
+                            }}
+
+
+                            @media only screen and (max-height: 350px) {
+                            label span:before{
+                                content: "";
+                                background-color: #ffff;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                margin-right: 10px;
+                                transition: .25s ease;
+                                box-shadow:  inset 0 0 0 2px #0000F7;
+                            }}
+    
+
+          @media only screen and (min-width: 1000px) {
+            #fixed { 
+              font-size: 16px;
+            position: relative;
+            bottom: 20%;
+            width: 70%;
+            
+          }}
+    
+          @media only screen and (min-width: 1000px) {
+            #sbtn{
+            position: relative;
+            bottom: 18%;
+    
+          }}
+    
+          @media only screen and (min-width: 1300px) {
+            #fixed { 
+              font-size: 16px;
+            position: relative;
+            bottom: 24%;
+            width: 70%;
+            
+          }}
+    
+          @media only screen and (min-width: 1300px) {
+            #sbtn{
+            position: relative;
+             bottom: 19%;
+    
+          }}
+          @media only screen and (min-height: 1100px) {
+            #fixed { 
+              font-size: 16px;
+            position: relative;
+            bottom: 24%;
+            width: 70%;
+            
+          }}
+    
+          @media only screen and (min-height: 1100px) {
+            #sbtn{
+            position: relative;
+             bottom: 19%;
+    
+          }}
+    
+
+    </style>
+
+
 <head>
 <body>
 
 <br>
 
 {% for x in qs %}
-<h5>{{x.question}}</h5>
+<h5 id="qs" >{{x.question}}</h5>
 
 <br>
-
+<div id="fixed">
     <form method="POST" action='/survey?id={{id}}'">
     
         {% csrf_token %}
     
-        <ul class="list-group" id="fixed" >
         
         
-            <label>
+        
+            
                 <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name = "radio" value=1 aria-label="..."> Never or Hardly Ever</input><br><br>
-                    <input class="form-check-input me-1" type="radio" name = "radio" value=2 aria-label="..."> About once a Year</input><br><br>
-                    <input class="form-check-input me-1" type="radio" name = "radio" value=3 aria-label="..."> About once a Month</input><br><br>
-                    <input class="form-check-input me-1" type="radio" name = "radio" value=4 aria-label="..."> About once a week</input><br><br>
-                    <input class="form-check-input me-1" type="radio" name = "radio" value=5 aria-label="..."> About Everyday</input><br><br>
-                    <input class="form-check-input me-1" type="radio" name = "radio" value=0 aria-label="..."> Don't Understand the Question</input><br><br>
+
+
+                    <label id="lab"> <input  type="radio" name = "radio" value=1 id='html'/> <span> Never or Hardly Ever          </span> </label>  
+                    <label id="lab"> <input  type="radio" name = "radio" value=2 id='html'/> <span> About once a Year             </span> </label>  
+                    <label id="lab"> <input  type="radio" name = "radio" value=3 id='html'/> <span> About once a Month            </span> </label>   
+                    <label id="lab"> <input  type="radio" name = "radio" value=4 id='html'/> <span> About once a week             </span> </label>   
+                    <label id="lab"> <input  type="radio" name = "radio" value=5 id='html'/> <span> About Everyday                </span> </label>
+                    <label id="lab"> <input  type="radio" name = "radio" value=0 id='html'/> <span> Don't Understand the Question </span> </label> 
+                
                 </li>
-            </label>
-        
+            
+            
 
             
         </ul>
@@ -51,7 +381,7 @@
         {% endfor %}
 
     </form>
-    
+</div>   
 </body>
 
 {% endblock %}
