@@ -6,9 +6,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta1 name="color-scheme1" content="dark light1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    
     <style>
         .row{
             min-height: 500px;
@@ -16,6 +17,8 @@
         .margin-bottom {
           margin-bottom:15px;
       }
+
+
     </style>
      
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
@@ -28,9 +31,15 @@
  <body>
   <br>
     <div class="container">
+      <h5 style="color:#4d4d4d">Congratulations. These charts represent how much mathematics is in your life. The larger the slice, the more you use it.</h5>
       <div class="row align-items-center">
-
-        <H2>Domain</h2>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h5 >Domain</h5>
 
           <div >
           <canvas id="Polar" width=500 height= 500></canvas>
@@ -93,7 +102,16 @@ const Polar = new Chart(
  </body>
 
 
-{% include 'result2.html' %}
+</div>
+<br>
+<br>
+<button type="submit" class="btn btn-primary" id="next" onclick="location.href = '/result2'">next></button>  
+<br>
+<br>  
+<br>
+<br>
+<br>
+<br>
 
  </html>
 

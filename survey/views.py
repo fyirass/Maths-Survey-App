@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from requests import request
 from .models import Question
 from django.db.models import Max
+
+from django.core.mail import send_mail
 # Create your views here.
 
 
@@ -69,3 +71,4 @@ def result2(request):
 
 
     return render(request, 'result2.html', {'am_manage': am_manage , 'am_problem': am_problem })
+

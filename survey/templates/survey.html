@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <style>
@@ -35,6 +36,7 @@
             margin-bottom: 10px;
         }
 
+
         label span{
             display: inline-flex;
             align-items: center;
@@ -63,6 +65,46 @@
             box-shadow: inset 0 0 0 5.5px #0000F7;
         }
 
+        @media (prefers-color-scheme: dark) {
+
+            body{
+                margin:0;
+                padding: 0;
+                font-family: "Inter", sans-serif;
+                color: #ffff;
+                font-size: 18px;
+                background-color: #000000;
+            }
+
+            #li{
+                font-family: "Inter", sans-serif;
+                color: #ffff;
+                font-size: 18px;
+                background-color: #212529;
+            }
+
+            label span:hover,
+            input[type="radio"]:checked + span{
+                background-color: #818181;
+            }
+    
+            label span:before{
+                content: "";
+                background-color: #ffff;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                margin-right: 10px;
+                transition: .25s ease;
+                box-shadow:  inset 0 0 0 1px #6b6b6b;
+            }
+    
+            input[type="radio"]:checked + span:before{
+                box-shadow: inset 0 0 0 5.5px #6b6b6b;
+            }
+    
+    
+        }
         @media only screen and (min-height: 1300px ) {
             #fixed { 
             font-size: 18px;
@@ -351,7 +393,7 @@
         
         
             
-                <li class="list-group-item">
+                <li class="list-group-item" id="li">
 
 
                     <label id="lab"> <input  type="radio" name = "radio" value=1 id='html'/> <span> Never or Hardly Ever          </span> </label>  
@@ -381,7 +423,13 @@
         {% endfor %}
 
     </form>
-</div>   
+</div>  
+
+
+    <script>
+
+        console.log(window.matchMedia("(prefers-color-scheme: dark)").matches)
+    </script>
 </body>
 
 {% endblock %}

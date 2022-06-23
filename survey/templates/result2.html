@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +15,44 @@
       .margin-bottom {
         margin-bottom:15px;
       }
+
+
+      .textarea {
+        background-color: #dddddd;
+        color: #666666;
+        padding: 1em;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        outline: none;
+        font-family: "Heebo", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.4;
+        width: 100%;
+        height: 20%;
+        transition: all 0.2s;
+      }
+      
+      .textarea:hover {
+        cursor: pointer;
+        background-color: #eeeeee;
+      }
+      
+      .textarea:focus {
+        cursor: text;
+        color: #333333;
+        background-color: white;
+        border-color: #333333;
+      }
       #c {
         position: absolute;
-        left: 38%;
-        right: 38%;
+        left: 10%;
+        right: 58%;
+      } 
+      #d {
+        position: absolute;
+        left: 58%;
+        right: 10%;
       } 
     </style>
      
@@ -30,7 +67,7 @@
      <div class="container">
        <div class="row align-items-center">
         
-        <h2>Affective Zone</h2>
+        <h5>Affective Zone</h5>
           
           <br/>
 
@@ -38,16 +75,27 @@
           <canvas id="myChart" width="600" height="400"></canvas>
           </div>
       </div>
-     </div>
+     </div>        
+     <br>
+     <br>
+     <br>
+
+     <h6 style="color:#4d4d4d">Please share your feedback.</h6>
+     <br>
+     <textarea class="textarea" placeholder="Enter a message..."></textarea>
+     <button type="submit" class="btn btn-primary" style="background-color:#0202ff"  > Send </button>
         <br>
         <br>
-      <button type="submit" class="btn btn-primary" id="c" onclick="location.href = '/'">Restart</button>  
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary" id="d" onclick="location.href = '/'">Restart</button>  
+        <button type="submit" class="btn btn-primary" id="c" onclick="location.href = '/result'"> < back </button>  
+
         <br>
         <br>  
         <br>
-        <br>
-        <br>
-        <br>
+
 
 <script>
   const labels = [
@@ -124,3 +172,4 @@
  </body>
  </html>
 
+ {% endblock %}
