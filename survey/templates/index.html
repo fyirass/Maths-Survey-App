@@ -14,12 +14,11 @@
  </head>
  <body>
      <div class="container"> 
-        <br> 
-        <br>
-        <br>      
-        <h5 style="color:#4d4d4d">Thank you for taking our Survey. We think it will show you how often you use maths.</5>
+        <center><h2 style ="margin-top:6%; margin-bottom:5%;">Welcome</h2></center> 
+
+        <h5 id="txt">Thank you for taking our Survey. We think it will show you how useful maths is in your life.</5>
             <br>
-        <h5 style="color:#4d4d4d">Please select the option that is closest to your situation.</5>
+        <h5 id="txt">Please think about your work and hobbies when reading each question and select the most relevant option to you.</5>
         <br>
         <br>
         <br>
@@ -41,6 +40,38 @@
        </div>
        
  </body>
+<script>
 
+    var isChromium = window.chrome;
+    var winNav = window.navigator;
+    var vendorName = winNav.vendor;
+    var isOpera = typeof window.opr !== "undefined";
+    var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+    var isIOSChrome = winNav.userAgent.match("CriOS");
+
+
+    
+        if (isIOSChrome) {
+        // is Google Chrome on IOS
+        } else if(
+        isChromium !== null &&
+        typeof isChromium !== "undefined" &&
+        vendorName === "Google Inc." &&
+        isOpera === false &&
+        isIEedge === false
+        ) {
+    
+        } else { 
+            if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)==true) {
+                if (confirm("Please open this site in chrome") == true) {
+                    userPreference = "successfully!";
+                } else {
+                    userPreference = "Cancelled!";
+                }
+            
+        }
+}
+</script>
 
 {% endblock %}
+

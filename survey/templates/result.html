@@ -1,23 +1,126 @@
-{% extends 'base.html' %}
-{% block content %}
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta1 name="color-scheme1" content="dark light1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths survey</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     
     <style>
-        .row{
-            min-height: 500px;
-        }
-        .margin-bottom {
-          margin-bottom:15px;
+      *,
+      *:after,
+      *:before{
+          box-sizing: border-box;
       }
 
+      body{
+        margin:0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        color: #000021;
+        font-size: 15px;
+        background-color: #e6e6ef;
+    }
+    
+    .row{
+      min-height: 500px;
+  }
+  .margin-bottom {
+    margin-bottom:15px;
+}
+
+#button{
+
+  width:50%;
+  margin-left:25%;
+  margin-right:25%;
+  }
+
+@media (prefers-color-scheme: dark) {
+
+
+
+  
+  body{
+    
+      margin:0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      color: #ffff;
+      font-size: 18px;
+      background-color: #000000;
+  }
+
+
+  #button{
+
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;
+    background-color: #6b6b6b;
+    font-family: "Inter", sans-serif;
+    color: #ffff;
+    }
+
+    #sbtn{
+
+      background-color: #6b6b6b;
+      font-family: "Inter", sans-serif;
+      color: #ffff;
+    }
+    #c{
+
+      background-color: #6b6b6b;
+      font-family: "Inter", sans-serif;
+      color: #ffff;
+    }
+    #d{
+
+      background-color: #6b6b6b;
+      font-family: "Inter", sans-serif;
+      color: #ffff;
+    }
+  
+
+
+
+  #txt{
+    "color:#4d4d4d"
+  }
+
+
+
+    #next{
+      width:50%;
+      margin-left:25%;
+      margin-right:25%;
+
+    }
+
+      @media (prefers-color-scheme: dark) {
+
+
+
+  
+        body{
+          
+            margin:0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+            color: #ffff;
+            font-size: 18px;
+            background-color: #2c3136;
+        }
+      
+      }
 
     </style>
      
@@ -29,27 +132,29 @@
 
 </head>
  <body>
-  <br>
+  
     <div class="container">
-      <h5 style="color:#4d4d4d">Congratulations. These charts represent how much mathematics is in your life. The larger the slice, the more you use it.</h5>
-      <div class="row align-items-center">
-        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h5 >Domain</h5>
 
-          <div >
-          <canvas id="Polar" width=500 height= 500></canvas>
+      <center><h2 style ="margin-top:5%;">Congratulations!</h2></center> 
+      <div style= " margin-top: 20px; margin-bottom: 20px;" >
+        
+      <h6 id="txt">These charts represent how much mathematics is in your life.</h6>
+      
+      </div>
+
+          <div>
+          <canvas id="Polar" width=400 height= 400></canvas>
           </div>
 
-      </div>
+    
+      <br>
+      <h6 id="txt">The larger the slice, the more you use it.</h6>
     </div>
-  <br>
-  <br>
 
+
+<br>
+<center><button type="submit" class="btn btn-primary" id="button" onclick="location.href = '/result2'">NEXT CHART</button></center>
+<br>
 
   
 <script>
@@ -57,9 +162,9 @@
 
   const data = {
   labels: [
-    'Data Handling & Chance ',
-    'Space & Shape',
-    'Pattern & Relationship',
+    'Data Handling & Chance',
+    'Space & Shape     ',
+    'Pattern & Relationship    ',
     'Quantity & Number'
   ],
   datasets: [{
@@ -78,6 +183,18 @@ const config = {
   type: 'polarArea',
   data: data,
   options: {
+    plugins: {
+      legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+              color: '#007CF7',
+              font: {
+                size: 10
+            }
+          }
+      }
+  },
     maintainAspectRatio: false,
     scales: {
       r: {
@@ -89,6 +206,7 @@ const config = {
       }
       
     }
+    
   },
   plugins: [ChartDataLabels]
 };
@@ -102,17 +220,14 @@ const Polar = new Chart(
  </body>
 
 
-</div>
-<br>
-<br>
-<button type="submit" class="btn btn-primary" id="next" onclick="location.href = '/result2'">next></button>  
-<br>
-<br>  
-<br>
-<br>
-<br>
-<br>
+ 
+
+
+
+
+
+
+
 
  </html>
 
-{% endblock %}

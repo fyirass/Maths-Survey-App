@@ -8,5 +8,9 @@ class Question(models.Model):
     domain = models.CharField(max_length=200, default='Data Handling & Chance ', verbose_name='domain')
     affective_zone = models.CharField(max_length=200, default='Manage a Mathematics Containing Situation', verbose_name='affective_zone')
     votes = models.IntegerField(default=0)
-
     
+class Feedback(models.Model):
+
+    email = models.CharField(max_length=200,  verbose_name='email', default='mathsurveyapp@gmail.com')
+
+   

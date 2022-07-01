@@ -126,3 +126,10 @@ STATIC_URL = '/static/'
 #STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+
+#### sendig email setting
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'mathsurveyapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'jtyyaeyziminnlig'
+EMAIL_USE_TLS = True

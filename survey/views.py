@@ -1,11 +1,15 @@
 
 from multiprocessing import context
 from django.shortcuts import render, redirect
+from flask import message_flashed
 from requests import request
 from .models import Question
+from .models import Feedback
 from django.db.models import Max
-
+from django.contrib import messages
 from django.core.mail import send_mail
+from django.conf import settings
+from survey.forms import SubscribeForm
 # Create your views here.
 
 
@@ -70,5 +74,22 @@ def result2(request):
 
 
 
+
     return render(request, 'result2.html', {'am_manage': am_manage , 'am_problem': am_problem })
 
+
+def feedback(request):
+    
+    if request.method == "POST":
+        message = request.POST.get('text')
+      
+        subject = 'Math Survey Feedback'
+        recipient = 'tutorjk@gmail.com'
+        
+        send_mail(subject, 
+            message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+       
+        return redirect('result2')
+        
+        
+    return render(request, 'feedback.html', {})
