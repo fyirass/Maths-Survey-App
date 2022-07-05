@@ -93,3 +93,8 @@ def feedback(request):
         
         
     return render(request, 'feedback.html', {})
+
+
+
+def test(request ):
+    return render(request, 'test.html', {})

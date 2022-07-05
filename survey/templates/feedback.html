@@ -47,16 +47,18 @@
 
 <body>
 <h6 id="txt">Please share your feedback.</h6>
-<br>
+
 <form method="POST" action='/feedback'>
+  
  {% csrf_token %}
-<textarea class="textarea" placeholder="Enter a message..."  name="text"></textarea>
+<textarea class="textarea" placeholder="Enter a message..."  name="text" style = 'margin-top:3.5%; '></textarea>
 
 <div>
-  <br>
-<button type="submit" name="submit" class="btn btn-primary"  id="d"  > Send </button>
+  <button type="submit" name="submit" class="btn btn-primary"  id="d" style = 'margin-top:4%;' > Send </button>
 </div>
+
 </form>
+
 </body>
 
 </html>

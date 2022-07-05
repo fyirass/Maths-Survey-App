@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "{% static '/css/basestyle.css' %}">
     <title>Index</title>
      
     
@@ -40,38 +42,7 @@
        </div>
        
  </body>
-<script>
 
-    var isChromium = window.chrome;
-    var winNav = window.navigator;
-    var vendorName = winNav.vendor;
-    var isOpera = typeof window.opr !== "undefined";
-    var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
-    var isIOSChrome = winNav.userAgent.match("CriOS");
-
-
-    
-        if (isIOSChrome) {
-        // is Google Chrome on IOS
-        } else if(
-        isChromium !== null &&
-        typeof isChromium !== "undefined" &&
-        vendorName === "Google Inc." &&
-        isOpera === false &&
-        isIEedge === false
-        ) {
-    
-        } else { 
-            if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)==true) {
-                if (confirm("Please open this site in chrome") == true) {
-                    userPreference = "successfully!";
-                } else {
-                    userPreference = "Cancelled!";
-                }
-            
-        }
-}
-</script>
 
 {% endblock %}
 

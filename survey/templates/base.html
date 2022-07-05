@@ -5,14 +5,24 @@
   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="color-scheme" content="light only">
+    <meta name=generator content="Frontweaver 8.2">
+    <meta name="keywords" content="british,type face,font,fonts,highway,highways">
     <title>Maths survey</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel = stylesheet href = "{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="css/basestyle.css">
+   
     <style>
+
+
+      :root {
+
+        --color: #ffff
+        --background-color: #000000
+        --panel_bg:#00ffff
+      }
       *,
       *:after,
       *:before{
@@ -26,91 +36,16 @@
         color: #000021;
         font-size: 15px;
         background-color: #e6e6ef;
-    }
+      }
     
     .row{
       min-height: 500px;
-  }
+    }
   .margin-bottom {
     margin-bottom:15px;
-}
-
-@media (prefers-color-scheme: dark) {
-
-
-
-  
-  body{
-    
-      margin:0;
-      padding: 0;
-      font-family: "Inter", sans-serif;
-      color: #ffff;
-      font-size: 18px;
-      background-color: #000000;
   }
 
-  #li{
-      font-family: "Inter", sans-serif;
-      color: #ffff;
-      font-size: 18px;
-      background-color: #212529;
-  }
 
-  label span:hover,
-  input[type="radio"]:checked + span{
-      background-color: #818181;
-  }
-
-  label span:before{
-      content: "";
-      background-color: #ffff;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      margin-right: 10px;
-      transition: .25s ease;
-      box-shadow:  inset 0 0 0 1px #6b6b6b;
-  }
-
-  input[type="radio"]:checked + span:before{
-      box-shadow: inset 0 0 0 5.5px #6b6b6b;
-  }
-
-  #button{
-
-    width:50%;
-    margin-left:25%;
-    margin-right:25%;
-    background-color: #6b6b6b;
-    font-family: "Inter", sans-serif;
-    color: #ffff;
-    }
-
-    #sbtn{
-
-      background-color: #6b6b6b;
-      font-family: "Inter", sans-serif;
-      color: #ffff;
-    }
-    #c{
-
-      background-color: #6b6b6b;
-      font-family: "Inter", sans-serif;
-      color: #ffff;
-    }
-    #d{
-
-      background-color: #6b6b6b;
-      font-family: "Inter", sans-serif;
-      color: #ffff;
-    }
-    #txt{
-      "color:#737373"
-    }
-  
-
-  }
 
   #txt{
     "color:#4d4d4d"
@@ -129,6 +64,41 @@
       margin-right:25%;
 
     }
+
+    
+    @media (prefers-color-scheme: dark) {
+
+      body{
+        
+          margin:0;
+          padding: 0;
+          font-family: "Inter", sans-serif;
+          color: #ffff;
+          font-size: 18px;
+          background-color: #000000;
+      }
+      #button{
+
+        width:50%;
+        margin-left:25%;
+        margin-right:25%;
+        background-color: #6b6b6b;
+        font-family: "Inter", sans-serif;
+        color: #ffff;
+        }
+        sbtn{
+          background-color: #6b6b6b;
+          font-family: "Inter", sans-serif;
+          color: #ffff;
+          }
+
+        #li {
+          font-family: "Inter", sans-serif;
+          color: #ffff !important;
+          background-color: #212529 !important;
+          
+      }
+    }
   </style>
 
     
@@ -137,7 +107,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           
-          <a class="navbar-brand" href="{% url 'index' %}"><h2>Maths Survey</h2></a>
+          <a class="navbar-brand" href="{% url 'index' %}"><h3>Maths Survey</h3></a>
           
         </div>
     </nav>

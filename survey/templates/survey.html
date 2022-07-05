@@ -1,33 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/basestyle.css">
     <style>
-                *,
-        *:after,
-        *:before{
-            box-sizing: border-box;
-        }
-
-        body{
-            margin:0;
-            padding: 0;
-            font-family: "Inter", sans-serif;
-            color: #000021;
-            font-size: 18px;
-            background-color: #E6E6EF;
-        }
+ 
 
 
 
-        input[type="radio"]{
-            display: none;
-        }
+        
+          [type=radio] {
+            position: absolute;
+            opacity: 0;
+          }
+          
+          [type=radio]+img {
+            cursor: pointer;
+            margin-right: 0.5rem;
+          }
+          
+
 
         label{
             display: block;
@@ -36,14 +33,14 @@
             margin-bottom: 10px;
         }
 
-
         label span{
-            display: inline-flex;
-            align-items: center;
-            padding: 3px 6px 3px 3px;
-            border-radius: 20px;
-            transition: .25s ease;
-        }
+          display: inline-flex;
+          align-items: center;
+          padding: 3px 6px 3px 3px;
+          border-radius: 20px;
+          transition: .25s ease;
+      }
+
 
         label span:hover,
         input[type="radio"]:checked + span{
@@ -51,65 +48,21 @@
         }
 
         label span:before{
-            content: "";
-            background-color: #ffff;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: .25s ease;
-            box-shadow:  inset 0 0 0 2px #0000F7;
-        }
+          
+          width: 20px;
+          height: 20px;
+          
+          margin-right: 10px;
+          transition: .25s ease;
+          
+      }
 
-        input[type="radio"]:checked + span:before{
-            box-shadow: inset 0 0 0 5.5px #0000F7;
-        }
-
-        @media (prefers-color-scheme: dark) {
-
-            body{
-                margin:0;
-                padding: 0;
-                font-family: "Inter", sans-serif;
-                color: #ffff;
-                font-size: 18px;
-                background-color: #000000;
-            }
-
-            #li{
-                font-family: "Inter", sans-serif;
-                color: #ffff;
-                font-size: 18px;
-                background-color: #212529;
-            }
-
-            label span:hover,
-            input[type="radio"]:checked + span{
-                background-color: #818181;
-            }
-    
-            label span:before{
-                content: "";
-                background-color: #ffff;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                margin-right: 10px;
-                transition: .25s ease;
-                box-shadow:  inset 0 0 0 1px #6b6b6b;
-            }
-    
-            input[type="radio"]:checked + span:before{
-                box-shadow: inset 0 0 0 5.5px #6b6b6b;
-            }
-    
-    
-        }
+        
         @media only screen and (min-height: 1300px ) {
             #fixed { 
-            font-size: 18px;
+            font-size: 17px;
             position: fixed;
-            bottom: 45%;
+            bottom: 42%;
             width: 90%;
             
           }}
@@ -117,124 +70,207 @@
           @media only screen and (min-height: 1300px) {
             #sbtn{
             position: fixed;
-             bottom: 40%;
+            bottom: 40%;
     
           }}
         @media only screen and (max-height: 1100px ) {
             #fixed { 
-            font-size: 18px;
+            font-size: 16px;
             position: fixed;
-            bottom: 48%;
+            bottom: 27rem;
             width: 90%;
             
           }}
     
           @media only screen and (max-height: 1100px) {
             #sbtn{
-            position: fixed;
-             bottom: 43%;
-    
-          }}
+              position: fixed;
+              bottom: 41%;
+      
+            }}
+            @media only screen and (max-height: 1100px) {
+              #qs{
+  
+                font-size: 21px;
+  
+              }}
     
     
           @media only screen and (max-height: 1000px ) {
             #fixed { 
-            font-size: 18px;
-            position: fixed;
-            bottom: 40%;
-            width: 90%;
+              font-size: 18px;
+              position: fixed;
+              bottom: 20rem;
+              width: 90%;
             
           }}
           @media only screen and (max-height: 1000px) {
             #sbtn{
-            position: fixed;
-             bottom: 36%;
+              position: fixed;
+              bottom: 29%;
     
           }}
           @media only screen and (max-height: 900px) {
             #fixed { 
-              font-size: 16px;
-            position: fixed;
-            bottom: 38%;
-            width: 90%;
+              font-size: 19px;
+              position: fixed;
+              bottom: 16rem;
+              width: 90%;
             
           }}
           @media only screen and (max-height: 900px) {
             #sbtn{
-            position: fixed;
-             bottom: 36%;
+              font-size: 18px;
+              position: fixed;
+              bottom: 13rem;
     
           }}
-    
-          @media only screen and (max-height: 800px) {
-            #fixed { 
-              font-size: 16px;
-            position: fixed;
-            bottom: 29%;
-            width: 90%;
-            
-          }}
-          @media only screen and (max-height: 800px) {
-            #sbtn{
-            position: fixed;
-             bottom: 25%;
-    
-          }}
-    
-    
-          @media only screen and (max-height: 700px) {
-            #fixed { 
-              font-size: 16px;
-            position: fixed;
-            bottom: 20%;
-            width: 94%;
-            
-          }}
-    
-          @media only screen and (max-height: 700px) {
-            #sbtn{
-            position: fixed;
-             bottom: 15%;
-    
-          }}
-    
-          @media only screen and (max-height: 600px) {
-            #fixed { 
-            font-size: 13px;
-            position: fixed;
-            bottom: 18%;
-            width: 94%;
-            
-          }}
-    
-          @media only screen and (max-height: 600px) {
-            #sbtn{
-            position: fixed;
-             bottom: 13%;
-    
-          }}
-          @media only screen and (max-height: 600px) {
+          @media only screen and (max-height: 900px) {
             #qs{
 
-                font-size: 15px;
+              font-size: 21px;
 
             }}
     
+          @media only screen and (max-height: 850px) {
+            #fixed { 
+              font-size: 16px;
+              position: fixed;
+              bottom: 14rem;
+              width: 90%;
+            
+          }}
+          @media only screen and (max-height: 850px) {
+            #sbtn{
+              position: fixed;
+              bottom: 10rem;
     
-          @media only screen and (max-height: 500px) {
+          }}
+          @media only screen and (max-height: 850px) {
+            #qs{
+
+              font-size: 20px;
+
+            }}
+          
+          @media only screen and (max-height: 800px) {
+            #fixed { 
+              font-size: 17px;
+              position: fixed;
+              bottom: 11rem;
+              width: 90%;
+            
+          }}
+          @media only screen and (max-height: 800px) {
+            #sbtn{
+              position: fixed;
+              bottom: 9rem;
+    
+          }}
+          @media only screen and (max-height: 800px) {
+            #qs{
+
+              font-size: 20px;
+
+            }}
+
+            @media only screen and (max-height: 750px) {
+              #fixed { 
+                font-size: 15px;
+                position: fixed;
+                bottom: 9rem;
+                width: 94%;
+              
+            }}
+            @media only screen and (max-height: 750px) {
+              body { 
+                font-size: 10px;
+              
+            }}
+      
+            @media only screen and (max-height: 750px) {
+              #sbtn{
+                font-size: 15px;
+                position: fixed;
+                bottom: 13%;
+            }}
+            
+            @media only screen and (max-height: 750px) {
+              #qs{
+  
+                font-size: 18px;
+  
+              }}
+  
+
+    
+    
+          @media only screen and (max-height: 700px) {
+            #fixed { 
+              font-size: 14px;
+              position: fixed;
+              bottom: 8rem;
+              width: 94%;
+            
+          }}
+          @media only screen and (max-height: 700px) {
+            body { 
+              font-size: 10px;
+            
+          }}
+    
+          @media only screen and (max-height: 700px) {
+            #sbtn{
+              font-size: 15px;
+              position: fixed;
+              bottom: 14%;
+          }}
+          
+          @media only screen and (max-height: 700px) {
+            #qs{
+
+              font-size: 17px;
+
+            }}
+
+    
+          @media only screen and (max-height: 600px) {
             #fixed { 
               font-size: 12px;
-            position: fixed;
-            bottom: 5%;
-            width: 94%;
+              position: fixed;
+              bottom: 4rem;
+              width: 94%;
+              
+          }}
+    
+          @media only screen and (max-height: 600px) {
+            #sbtn{
+              position: fixed;
+              bottom: 8%;
+    
+          }}
+          @media only screen and (max-height: 600px) {
+            #qs{
+
+              font-size: 17px;
+
+            }}
+    
+    
+          @media only screen and (max-height: 500px) {
+            #fixed { 
+              font-size: 10px;
+              position: fixed;
+              bottom: 3%;
+              width: 94%;
             
           }}
 
           @media only screen and (max-height: 500px) {
             #sbtn{
-            font-size: 13px;
-            position: fixed;
-             bottom: 2%;
+              font-size: 11px;
+              position: fixed;
+              bottom: 1%;
     
           }}
 
@@ -245,84 +281,78 @@
 
             }}
 
-            @media only screen and (max-height: 400px) {
-                #fixed { 
-                  font-size: 9px;
+        @media only screen and (max-height: 400px) {
+            #fixed { 
+              font-size: 9px;
+              position: fixed;
+              bottom: 4%;
+              width: 70%;
+            
+            
+          }}
+
+          @media only screen and (max-height: 400px) {
+            #sbtn{
+            font-size: 11px;
+            position: fixed;
+              bottom: 1%;
+    
+          }}
+
+          @media only screen and (max-height: 400px) {
+            #qs{
+
+                font-size: 13px;
+
+            }}
+
+          @media only screen and (max-height: 400px) {
+              #lab{
+
+                margin-bottom: 2px;
+
+                  }
+            }
+
+
+          @media only screen and (max-height: 350px) {
+              #fixed { 
+                font-size: 8px;
                 position: fixed;
-                bottom: 4%;
-                width: 70%;
-                
-                
-              }}
-    
-              @media only screen and (max-height: 400px) {
-                #sbtn{
-                font-size: 11px;
+                bottom: 9%;
+                width: 80%;
+              
+              
+            }}
+  
+            @media only screen and (max-height: 350px) {
+              #sbtn{
+                font-size: 10px;
                 position: fixed;
-                 bottom: 1%;
-        
-              }}
-    
-              @media only screen and (max-height: 400px) {
-                #qs{
-    
-                    font-size: 13px;
-    
-                }}
-
-              @media only screen and (max-height: 400px) {
-                    #lab{
-        
-                        margin-bottom: 2px;
-
-                    }}
+                bottom: 3%;
+      
+            }}
+  
+            @media only screen and (max-height: 350px) {
+              #qs{
+  
+                  font-size: 11px;
+                }
+              }
 
 
-                    @media only screen and (max-height: 350px) {
-                        #fixed { 
-                          font-size: 8px;
-                        position: fixed;
-                        bottom: 9%;
-                        width: 80%;
-                        
-                        
-                      }}
-            
-                      @media only screen and (max-height: 350px) {
-                        #sbtn{
-                        font-size: 10px;
-                        position: fixed;
-                         bottom: 3%;
-                
-                      }}
-            
-                      @media only screen and (max-height: 350px) {
-                        #qs{
-            
-                            font-size: 11px;
-            
-                        }}
-        
-                      @media only screen and (max-height: 350px) {
-                            #lab{
-                
-                                margin-bottom: 1px;
-        
-                            }}
+
+            @media only screen and (max-height: 350px) {
+              #lab{
+  
+                  margin-bottom: 1px;
+
+                  }
+              }
 
 
-                            @media only screen and (max-height: 350px) {
-                            label span:before{
-                                content: "";
-                                background-color: #ffff;
-                                width: 10px;
-                                height: 10px;
-                                border-radius: 50%;
-                                margin-right: 10px;
-                                transition: .25s ease;
-                                box-shadow:  inset 0 0 0 2px #0000F7;
-                            }}
-    
+   
+
 
           @media only screen and (min-width: 1000px) {
             #fixed { 
@@ -370,7 +400,20 @@
              bottom: 19%;
     
           }}
-    
+
+          
+
+          @media (prefers-color-scheme: dark) {
+
+            #sbtn{
+      
+              background-color: #6b6b6b;
+              font-family: "Inter", sans-serif;
+              color: #ffff;
+            }
+          }
+   
+          
 
     </style>
 
@@ -392,29 +435,117 @@
         
         
         
-            
-                <li class="list-group-item" id="li">
+        <img src="{% static 'img/retail-black-friday-small-banner-1-opt.jpg' %}" alt="">
+               
+        <li class="list-group-item" id="li">
 
+                    <label id="lab" style='margin-top: 0.6rem;'> 
+                    <input  
+                        
+                        type="radio" 
+                        name = "radio" 
+                        value=1 
+                        id="RadioButtonFieldID1"
+                        style="display:none;"
+                        onclick="RadioButtonClicked('RadioButtonFieldID1','ImageRadioButtonFieldID1')"> 
+                    <span><img 
+                        id="ImageRadioButtonFieldID1" 
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/43/Blue_circle_for_diabetes.svg" 
+                        style="width:25px; height:25px; cursor:pointer; vertical-align:bottom; margin-right:0.8rem;" 
+                        >
 
-                    <label id="lab"> <input  type="radio" name = "radio" value=1 id='html'/> <span> Never or Hardly Ever          </span> </label>  
-                    <label id="lab"> <input  type="radio" name = "radio" value=2 id='html'/> <span> About once a Year             </span> </label>  
-                    <label id="lab"> <input  type="radio" name = "radio" value=3 id='html'/> <span> About once a Month            </span> </label>   
-                    <label id="lab"> <input  type="radio" name = "radio" value=4 id='html'/> <span> About once a week             </span> </label>   
-                    <label id="lab"> <input  type="radio" name = "radio" value=5 id='html'/> <span> About Everyday                </span> </label>
-                    <label id="lab"> <input  type="radio" name = "radio" value=0 id='html'/> <span> Don't Understand the Question </span> </label> 
-                
-                </li>
-            
-            
+                    <span> Never or Hardly Ever  </span> </label>  
+                    
+                    <label id="lab"> 
+                      <input
+                         
+                          type="radio" 
+                          name = "radio" 
+                          value=2 
+                          id='RadioButtonFieldID2'/
+                          style="display:none;"
+                          onclick="RadioButtonClicked('RadioButtonFieldID2','ImageRadioButtonFieldID2')"> 
+                    <span><img 
+                          id="ImageRadioButtonFieldID2" 
+                          src="https://upload.wikimedia.org/wikipedia/commons/4/43/Blue_circle_for_diabetes.svg" 
+                          style="width:25px; height:25px; cursor:pointer; vertical-align:bottom; margin-right:0.8rem;" 
+                          >
+                       About once a Year             </span> </label> 
+                      
+                      
 
-            
-        </ul>
+                    <label id="lab"> 
+                      <input  
+                      type="radio" 
+                      name = "radio" 
+                      value=3 
+                      id='RadioButtonFieldID3'
+                      style="display:none;"
+                      onclick="RadioButtonClicked('RadioButtonFieldID3','ImageRadioButtonFieldID3')"/> 
+                      <span><img 
+                          id="ImageRadioButtonFieldID3" 
+                          src="https://upload.wikimedia.org/wikipedia/commons/4/43/Blue_circle_for_diabetes.svg" 
+                          style="width:25px; height:25px; cursor:pointer; vertical-align:bottom; margin-right:0.8rem;" 
+                          >
+
+                       About once a Month            </span> </label> 
+
+                    <label id="lab"> 
+                      <input  type="radio" 
+                      name = "radio" 
+                      value=4 
+                      id='RadioButtonFieldID4'
+                      style="display:none;"
+                      onclick="RadioButtonClicked('RadioButtonFieldID4','ImageRadioButtonFieldID4')"/> 
+                      <span><img 
+                          id="ImageRadioButtonFieldID4" 
+                          src="https://upload.wikimedia.org/wikipedia/commons/4/43/Blue_circle_for_diabetes.svg" 
+                          style="width:25px; height:25px; cursor:pointer; vertical-align:bottom; margin-right:0.8rem;" 
+                          >
+
+                          About once a week             </span> </label>   
+
+                    <label id="lab"> 
+                      <input  
+                      type="radio" 
+                      name = "radio" 
+                      value=5 
+                      id='RadioButtonFieldID5'
+                      style="display:none;"
+                      onclick="RadioButtonClicked('RadioButtonFieldID5','ImageRadioButtonFieldID5')"/> 
+                      
+                      <span><img 
+                        id="ImageRadioButtonFieldID5" 
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/43/Blue_circle_for_diabetes.svg" 
+                        style="width:25px; height:25px; cursor:pointer; vertical-align:bottom; margin-right:0.8rem;" 
+                        >
+
+                        About Everyday                </span> </label>
+
+                    <label id="lab"> 
+                      <input  
+                      type="radio" 
+                      name = "radio" 
+                      value=0 
+                      id='RadioButtonFieldID6'
+                      onclick="RadioButtonClicked('RadioButtonFieldID6','ImageRadioButtonFieldID6')"/> 
+                      
+                      <span><img 
+                        id="ImageRadioButtonFieldID6" 
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/43/Blue_circle_for_diabetes.svg" 
+                        style="width:25px; height:25px; cursor:pointer; vertical-align:bottom; margin-right:0.8rem;" 
+                        >
+
+                        Don't Understand the Question </span> </label> 
+
+        </li>    
+        
         <br>
         <br>
 
 
         {% if id == 34 %}
-        <submit type="submit" class="btn btn-primary" onclick="location.href='result'"  name="radio">Submit</submit>
+        <submit type="submit" class="btn btn-primary" onclick="location.href='result'" id="sbtn"  name="radio">Submit</submit>
 
         {% else %}
         <input type="submit" class="btn btn-primary" id="sbtn" >
@@ -425,11 +556,40 @@
     </form>
 </div>  
 
+<script type="text/javascript">
 
-    <script>
-
-        console.log(window.matchMedia("(prefers-color-scheme: dark)").matches)
-    </script>
+  var RadioCheckedImage = new Image();
+  var RadioUncheckedImage = new Image();
+  
+ 
+  
+  RadioCheckedImage.src = "https://icon-library.com/images/d1bbdcc09c.svg.svg";
+  RadioUncheckedImage.src = "https://upload.wikimedia.org/wikipedia/commons/4/43/Blue_circle_for_diabetes.svg";
+  
+  // Provide the next two array variables with 
+  //   the list of the radio button field ID 
+  //   values and the radio button image ID 
+  //   values. Each list should have the same 
+  //   number of items.
+  
+  var ListOfRadioButtonFieldIDs = Array( "RadioButtonFieldID1", "RadioButtonFieldID2", "RadioButtonFieldID3","RadioButtonFieldID4", "RadioButtonFieldID5", "RadioButtonFieldID6" );
+  var ListOfRadioButtonImageIDs = Array( "ImageRadioButtonFieldID1", "ImageRadioButtonFieldID2", "ImageRadioButtonFieldID3","ImageRadioButtonFieldID4", "ImageRadioButtonFieldID5", "ImageRadioButtonFieldID6" );
+  
+  /* End of customization section. */
+  
+  function RadioButtonClicked(fieldid,imageid)
+  {
+      var len = ListOfRadioButtonFieldIDs.length;
+      for( i=0; i<len; i++ )
+      {
+          document.getElementById(ListOfRadioButtonFieldIDs[i]).checked = false;
+          document.getElementById(ListOfRadioButtonImageIDs[i]).src = RadioUncheckedImage.src;
+      }
+      document.getElementById(fieldid).checked = true;
+      document.getElementById(imageid).src = RadioCheckedImage.src;
+  }
+  </script>
+  
 </body>
 
 {% endblock %}
