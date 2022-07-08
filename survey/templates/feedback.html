@@ -46,13 +46,13 @@
     </style>
 
 <body>
-<h6 id="txt">These measures indicate how often you use of maths in general</h6>
-<h6 id="txt" >Please share your feedback.</h6>
+<h6 id="txt">These measures indicate how often you use maths in general</h6>
+<h6 id="txt"style = 'margin-top:3%;' >Please share your feedback.</h6>
 
 <form method="POST" action='/feedback'>
   
  {% csrf_token %}
-<textarea class="textarea" placeholder="Enter a message..."  name="text" style = 'margin-top:3.5%; '></textarea>
+<textarea class="textarea" placeholder="Enter a message..."  name="text" style = 'margin-top:3%; '></textarea>
 
 <div>
   <button type="submit" name="submit" class="btn btn-primary"  id="d" style = 'margin-top:4%;' > Send </button>
