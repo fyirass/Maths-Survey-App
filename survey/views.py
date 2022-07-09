@@ -84,7 +84,7 @@ def feedback(request):
         message = request.POST.get('text')
       
         subject = 'Math Survey Feedback'
-        recipient = 'tutorjk@gmail.com'
+        recipient = '@gmail.com'
         
         send_mail(subject, 
             message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)

@@ -133,8 +133,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Maths_survey_app/static')]
 #### sendig email setting
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'youandmathfeedback@gmail.com'
-EMAIL_HOST_PASSWORD = 'uodfkyxjocugcais'
+EMAIL_HOST_USER = '@gmail.com'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 
 
